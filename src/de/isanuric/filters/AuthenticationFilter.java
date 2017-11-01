@@ -1,6 +1,9 @@
 package de.isanuric.filters;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -32,12 +35,14 @@ public class AuthenticationFilter implements Filter {
 			String uri = req.getRequestURI();
 			this.context.log("Requested Resource::" + uri);
 			
+			// if there is no current session dont't returns a new session.
 			HttpSession session = req.getSession(false);
 			
-			if (session == null && !(uri.endsWith("html") || uri.endsWith("LoginServlet"))){
+			if (session == null && !(uri.endsWith("login.jsp") || uri.endsWith("LoginServlet"))){
 				this.context.log("Unauthorized access request");
 				res.sendRedirect("login.jsp");
 			}else{
+				this.context.log("Authorized access request");
 				// pass the request along the filter chain
 				chain.doFilter(request, response);
 			}

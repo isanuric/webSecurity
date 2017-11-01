@@ -14,5 +14,7 @@
 	<input type="submit" value="Login">
 </form>
 
+<jsp:include page="sessionInfo.jsp"></jsp:include>
+
 </body>
 </html>
