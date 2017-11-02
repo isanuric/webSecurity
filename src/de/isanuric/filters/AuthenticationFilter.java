@@ -33,7 +33,7 @@ public class AuthenticationFilter implements Filter {
 			HttpServletResponse res = (HttpServletResponse) response;
 			
 			String uri = req.getRequestURI();
-			this.context.log("Requested Resource::" + uri);
+			this.context.log("Requested URI: " + uri);
 			
 			// if there is no current session dont't returns a new session.
 			HttpSession session = req.getSession(false);

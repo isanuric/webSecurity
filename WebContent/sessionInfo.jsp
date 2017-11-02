@@ -1,4 +1,6 @@
-<h3>Session Information</h3>
+
+<br><br><br><br><br><br>
+<h4>Session Information</h4>
 <table border=1>
 	<tr>
 		<td>actual session object</td>

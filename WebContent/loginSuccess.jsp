@@ -17,6 +17,7 @@
 	
 	if (cookies !=null) {
 		for(Cookie cookie : cookies){
+			out.println(cookie.getName() + ": " + cookie.getValue());
 			if(cookie.getName().equals("user")) userName = cookie.getValue();
 			if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
 		}
