@@ -24,7 +24,7 @@ public class MessageDigestGen {
 	}
 
 	public String createMessageDigest(String plainText) throws UnsupportedEncodingException {
-
+			System.out.println("Model");
 		try {
 //			System.out.println(DigestUtils.sha1Hex(plainText));
 			MessageDigest digest = MessageDigest.getInstance("SHA-1");
@@ -33,7 +33,6 @@ public class MessageDigestGen {
 			digest.update(plainText.getBytes("utf8"));
 			byte[] digestBytes = digest.digest();
 			digestStr = DatatypeConverter.printHexBinary(digestBytes);
-			System.out.println(digestStr);
 			return digestStr;
 	    
 		} catch (NoSuchAlgorithmException e) {

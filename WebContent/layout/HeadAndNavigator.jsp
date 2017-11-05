@@ -7,18 +7,20 @@
 <meta HTTP-EQUIV=Expires CONTENT="0">   
 <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">  
 <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+	<body>
 
-
-<div class="header">Webapplications</div>
+<div class="header">Cryptography</div>
 
 <div class="column side ul">
     <h4>Contents</h4>
+    <br>
     <a href="login.jsp">Home</a> <br>
 	<a href="messageDigest.jsp">Message Digest</a> <br>
-	<a href="#">bbbbb</a>  <br>
-	<a href="#">ccccc</a>  <br>
-    <a href="#">ddddd</a>  <br>
-	<a href="#">ddddd</a>  <br>
-	<a href="#">ddddd</a>  <br>
-	<a href="#">ddddd</a>  <br>
+	<a href="privateKey.jsp">Private Key</a><br>
+	<a href="#">Public Key</a><br>
+    <a href="#">todo</a>  <br>
+	<a href="#">todo</a>  <br>
+	<a href="#">todo</a>  <br>
+	<a href="#">todo</a>  <br>
 </div>

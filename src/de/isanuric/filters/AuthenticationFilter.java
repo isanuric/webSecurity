@@ -28,38 +28,38 @@ public class AuthenticationFilter implements Filter {
 		}
 		
 		public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
+			System.out.println("Filter");
 			HttpServletRequest  req = (HttpServletRequest) request;
 			HttpServletResponse res = (HttpServletResponse) response;
 			// if there is no current session dont't returns a new session.
 			HttpSession session = req.getSession(false);
-			
-			String plainText  = request.getParameter("plainText");
-			String cipherText = request.getParameter("result");
-			
-			System.out.println("filter9: " + plainText);
-			System.out.println("filter9: " + cipherText);
-			
-			
-			
-//			System.out.println("filter: " + session.getId());
-			
-//			if (plainText == null) {
-//				 Enumeration<String> e = session.getAttributeNames();
-//				 while (e.hasMoreElements()) {
-//				      String name = (String) e.nextElement();
-////				      System.out.println(name + ": " + session.getAttribute(name)  );
-//				      session.removeAttribute(name);
-//				 }
+//			
+//			Enumeration<String> reqAtt = req.getAttributeNames();
+//			System.out.println(reqAtt.hasMoreElements());
+//			while (reqAtt.hasMoreElements()) {
+//				String name = (String) reqAtt.nextElement();
+//				System.out.println("--> " +name + ": " + req.getAttribute(name));
 //			}
 			
 			 String uri = req.getRequestURI();
-			this.context.log("Requested URI: " + uri);
 			
 			if (session == null && !(uri.endsWith("login.jsp") || uri.endsWith("LoginServlet"))) {
 				this.context.log("Unauthorized access request");
 				res.sendRedirect("login.jsp");
-			}else{
+				
+//			}
+//			else if (session !=null && uri.endsWith("security/") && req.getAttribute("plainText") == null ) {
+//				System.out.println(this.getClass().getSimpleName() + " " + "2");
+//				
+//				Enumeration<String> e = session.getAttributeNames();
+//				 while (e.hasMoreElements()) {
+//				      String name = (String) e.nextElement();
+////					      System.out.println(name + ": " + session.getAttribute(name)  );
+//				      session.removeAttribute(name);
+//				 }
+//				 res.sendRedirect("messageDigest.jsp");
+				
+			}else {
 				this.context.log("Authorized access request");
 				// pass the request along the filter chain
 				chain.doFilter(request, response);
