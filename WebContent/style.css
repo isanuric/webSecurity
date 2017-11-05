@@ -1,96 +1,68 @@
 @charset "UTF-8";
 
-
-html, body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%; 
-}
-
-.content {
-	min-height: 100%;
-	position: relative;
-	overflow: auto;
-	z-index: 0; 
-}
-
-.background {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	bottom: 0;
-	margin: 0;
-	padding: 0;
-}
-
-.top_block {
-	width: 100%;
-	display: block; 
-}
-
-.bottom_block {
-	position: absolute;
-	width: 100%;
-	display: block;
-	bottom: 0; 
-}
-
-.left_block {
-	display: block;
-	float: left; 
-
-}
-
-.right_block {
-	display: block;
-	float: right; 
-}
-
-.center_block {
-	display: block;
-	width: auto; 
-}
-
 .header {
-	padding: 1em;
-	width: 100%;
-	height: 70px;
-	background-color: #1a191a;
-	color: white;
-	text-align: center;
+	font-size: 32px;
+    background-color: #acb3ae;
+    text-align: center;
+    padding: 20px;
 }
 
-.background.navi {
-	height: auto !important;
-	padding-bottom: 0;
-	left: 0;
-	width: 141px;
-	background-color: #f4f3f8;
-	margin-top: 70px;
-	margin-bottom: 56px; 
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
 }
 
-.navi {
-	height: auto;
-	width: 141px;
-	padding-bottom: 56px;
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
 }
 
-.navi ul {
+/* Left and right column */
+.column.side {
+    width: 15%;
+     
+}
+
+.column.side.ul {
     list-style-type: none;
-    color:  #fdfcff !important;
-    padding: 1;
-}
-   
-.navi ul a {
-    text-decoration: none;
+   text-decoration: none;
 }
 
+
+
+/* Middle column */
+.column.middle {
+    width: 70%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .footer {
-	width: 100%;
-	height: 56px;
-	background-color: #1a191a;
+    background-color: #555556;
+    text-align: center;
+    padding: 10px;
+}
+
+a {text-decoration: none; }
+
+input[name="result"]  {
+	type:text;
+    width: 100%;
+    background-color: #67b459;
+    font-size:24px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-style:none; 
 }
 

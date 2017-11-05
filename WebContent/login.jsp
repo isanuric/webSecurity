@@ -1,32 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="style.css">
 <title>login</title>
 </head>
-
 <body>
+<jsp:include page="layout/HeadAndNavigator.jsp"></jsp:include> 
+	
+    <div class="column middle">
+	    <h1>Main Content</h1>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna.
+	     Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula,
+	      risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent 
+	      scelerisque tortor sed accumsan convallis.</p>
+	      
+	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	     Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna
+	      tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus 
+	      quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+   </div>
 
-<body>
-	<div class="content">
-		<div class="top_block header">
-			AAAAAAA AAA
-		</div>
-		
-		<div class="background navi"></div>
-		<div class="left_block navi">
-			<jsp:include page="layout/HeadAndNavigator.jsp"></jsp:include>
-		</div>
-		
-		<div class="bottom_block footer">
-			<div class="content"></div>
-		</div>
-	</div>
-
-<%-- <jsp:include page="layout/HeadAndNavigator.jsp"></jsp:include> --%>
 
 <!-- <articel> -->
 <!-- <form action="LoginServlet" method="post"> -->

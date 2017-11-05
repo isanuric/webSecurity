@@ -28,17 +28,35 @@ public class AuthenticationFilter implements Filter {
 		}
 		
 		public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-
+		
 			HttpServletRequest  req = (HttpServletRequest) request;
 			HttpServletResponse res = (HttpServletResponse) response;
-			
-			String uri = req.getRequestURI();
-			this.context.log("Requested URI: " + uri);
-			
 			// if there is no current session dont't returns a new session.
 			HttpSession session = req.getSession(false);
 			
-			if (session == null && !(uri.endsWith("login.jsp") || uri.endsWith("LoginServlet"))){
+			String plainText  = request.getParameter("plainText");
+			String cipherText = request.getParameter("result");
+			
+			System.out.println("filter9: " + plainText);
+			System.out.println("filter9: " + cipherText);
+			
+			
+			
+//			System.out.println("filter: " + session.getId());
+			
+//			if (plainText == null) {
+//				 Enumeration<String> e = session.getAttributeNames();
+//				 while (e.hasMoreElements()) {
+//				      String name = (String) e.nextElement();
+////				      System.out.println(name + ": " + session.getAttribute(name)  );
+//				      session.removeAttribute(name);
+//				 }
+//			}
+			
+			 String uri = req.getRequestURI();
+			this.context.log("Requested URI: " + uri);
+			
+			if (session == null && !(uri.endsWith("login.jsp") || uri.endsWith("LoginServlet"))) {
 				this.context.log("Unauthorized access request");
 				res.sendRedirect("login.jsp");
 			}else{

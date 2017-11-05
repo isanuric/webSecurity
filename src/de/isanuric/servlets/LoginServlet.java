@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import de.isanuric.model.MysqlDB;;
+import de.isanuric.model.MysqlDB;
 
 /**
  * Servlet implementation class LoginServlet
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 			out.println("<font color=red>Either user name or password is wrong.</font>");
 			rd.include(request, response);
 		}
-		
 	}
+	
 
 }
