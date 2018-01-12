@@ -34,11 +34,11 @@
     <artifactId>commons-codec</artifactId>
     <version>1.9</version>
 </dependency>
-	
-
-  </dependencies>
+</dependencies>
  
   <build>
+    <!--url final name-->
+    <finalName>sec</finalName>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>

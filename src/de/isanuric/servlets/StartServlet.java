@@ -1,8 +1,11 @@
 package de.isanuric.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Enumeration;
 
+import java.util.List;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,15 +29,27 @@ public class StartServlet extends HttpServlet {
 		String plainText = request.getParameter("plainText");
 		String cipherText = request.getParameter("result");
 
+		// request.getParameterNames()
+		Enumeration params = request.getParameterNames();
+		while (params.hasMoreElements()) {
+			Object object = params.nextElement();
+			String fieldName = (String) object;
+			String fieldValue = request.getParameter(fieldName);
+			System.out.println(fieldName + ":: " + fieldValue);
+		}
+
+
+
 		if (!StringUtils.isBlank(plainText)) {
-		
+
 			MessageDigestGen msgDgst = new MessageDigestGen();
 			cipherText = msgDgst.createMessageDigest(plainText);
 		    request.setAttribute("plainText", plainText);
 		    request.setAttribute("result", cipherText);
 			getServletContext().getRequestDispatcher("/messageDigest.jsp").forward(request, response);
 		}
-		
+
+		// refresh text fields
 		System.out.println("--->" + request.getParameter("refresh"));
 		if (request.getParameter("refresh") != null) {
 			request.removeAttribute("plainText");
